@@ -1,0 +1,15 @@
+# Read about `build.yaml` at https://pub.dartlang.org/packages/build_config
+
+targets:
+  $default:
+    builders:
+      dsx|parserBuilder:
+        enabled: true
+
+builders:
+  parserBuilder:
+    import: "./scripts/build.dart"
+    builder_factories: ["parserBuilder"]
+    build_extensions: {".dsx": [".dart"]}
+    build_to: source
+    auto_apply: root_package
